@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto py-6">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-3 mb-4">
+            <div class="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center">
+                <i class="fa-solid fa-map-location-dot text-primary text-2xl"></i>
+            </div>
+        </div>
+        <h1 class="text-4xl font-bold text-white mb-3">Nearest Place Finder</h1>
+        <p class="text-slate-400 text-lg max-w-xl mx-auto">
+            Find the closest places to you using the <span class="text-primary font-semibold">Divide & Conquer</span>
+            Closest Pair of Points algorithm.
+        </p>
+    </div>
+
+    <!-- Category Cards -->
+    <div class="mb-6">
+        <h2 class="text-sm uppercase tracking-widest text-slate-500 font-semibold mb-4 text-center">Select a destination</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+            <a href="/places/hospital" class="category-card group block rounded-2xl border border-slate-700 bg-slate-800/60 hover:border-blue-500 hover:bg-blue-500/10 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-hospital text-blue-400 text-xl"></i>
+                </div>
+                <h3 class="text-white font-semibold text-lg mb-1">Hospitals</h3>
+                <p class="text-slate-400 text-sm">Nearest hospitals & medical centers</p>
+                <div class="mt-4 flex items-center gap-1 text-blue-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Find nearest <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+            <a href="/places/police" class="category-card group block rounded-2xl border border-slate-700 bg-slate-800/60 hover:border-indigo-400 hover:bg-indigo-400/10 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-indigo-400/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-shield-halved text-indigo-400 text-xl"></i>
+                </div>
+                <h3 class="text-white font-semibold text-lg mb-1">Police Stations</h3>
+                <p class="text-slate-400 text-sm">Nearest police stations nearby</p>
+                <div class="mt-4 flex items-center gap-1 text-indigo-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Find nearest <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+            <a href="/places/fire_station" class="category-card group block rounded-2xl border border-slate-700 bg-slate-800/60 hover:border-orange-400 hover:bg-orange-400/10 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-orange-400/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-fire-extinguisher text-orange-400 text-xl"></i>
+                </div>
+                <h3 class="text-white font-semibold text-lg mb-1">Fire Stations</h3>
+                <p class="text-slate-400 text-sm">Nearest fire stations & services</p>
+                <div class="mt-4 flex items-center gap-1 text-orange-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Find nearest <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+            <a href="/places/supermarket" class="category-card group block rounded-2xl border border-slate-700 bg-slate-800/60 hover:border-emerald-400 hover:bg-emerald-400/10 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-emerald-400/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-cart-shopping text-emerald-400 text-xl"></i>
+                </div>
+                <h3 class="text-white font-semibold text-lg mb-1">Supermarkets</h3>
+                <p class="text-slate-400 text-sm">Grocery stores & supermarkets</p>
+                <div class="mt-4 flex items-center gap-1 text-emerald-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Find nearest <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+            <a href="/places/pharmacy" class="category-card group block rounded-2xl border border-slate-700 bg-slate-800/60 hover:border-pink-400 hover:bg-pink-400/10 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/10 hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-pink-400/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-pills text-pink-400 text-xl"></i>
+                </div>
+                <h3 class="text-white font-semibold text-lg mb-1">Pharmacies</h3>
+                <p class="text-slate-400 text-sm">Medical stores & pharmacies</p>
+                <div class="mt-4 flex items-center gap-1 text-pink-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Find nearest <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+            <a href="/places/gas_station" class="category-card group block rounded-2xl border border-slate-700 bg-slate-800/60 hover:border-yellow-400 hover:bg-yellow-400/10 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/10 hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-yellow-400/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-gas-pump text-yellow-400 text-xl"></i>
+                </div>
+                <h3 class="text-white font-semibold text-lg mb-1">Gas Stations</h3>
+                <p class="text-slate-400 text-sm">Petrol pumps & fuel stations</p>
+                <div class="mt-4 flex items-center gap-1 text-yellow-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Find nearest <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Algorithm Info Banner -->
+    <div class="card-glass p-5 rounded-2xl border border-slate-700 mt-6">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-code-branch text-primary"></i>
+            </div>
+            <div>
+                <h3 class="text-white font-semibold mb-1">Powered by Divide & Conquer Algorithm</h3>
+                <p class="text-slate-400 text-sm">
+                    Uses the <strong class="text-slate-200">Closest Pair of Points</strong> algorithm (O(n log n)) to find the nearest location from your position.
+                    The 2-point Euclidean distance formula — <span class="font-mono text-emerald-400">d = √((x₂−x₁)² + (y₂−y₁)²)</span> — is computed at each step.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
