@@ -7,6 +7,21 @@ from core.algorithm import run_closest_pair, brute_force_closest_pair
 # Load environment variables
 load_dotenv()
 
+# Manual fallback for loading .env/env if path contains unicode characters on Windows
+if not os.getenv('GOOGLE_MAPS_API_KEY'):
+    for env_name in ['.env', 'env']:
+        env_path = os.path.join(os.path.dirname(__file__), env_name)
+        if os.path.exists(env_path):
+            try:
+                with open(env_path, 'r', encoding='utf-8') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith('#') and '=' in line:
+                            k, v = line.split('=', 1)
+                            os.environ[k.strip()] = v.strip()
+            except Exception as e:
+                pass
+
 app = Flask(__name__)
 
 # Initialize database
