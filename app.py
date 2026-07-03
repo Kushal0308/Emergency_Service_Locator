@@ -37,7 +37,7 @@ def index():
     Renders the main map interface containing current emergency requests
     and nearby service units.
     """
-    google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY', 'YOUR_API_KEY_HERE')
+    google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY', 'YOUR_API_KEY_HERE').strip()
     return render_template('index.html', google_maps_api_key=google_maps_api_key)
 
 @app.route('/places/<category>')
@@ -46,7 +46,7 @@ def places(category):
     Renders the category-specific view (e.g., Hospitals, Police Stations, etc.)
     with maps integration and nearby resource details.
     """
-    google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY', 'YOUR_API_KEY_HERE')
+    google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY', 'YOUR_API_KEY_HERE').strip()
     
     # Metadata map to dynamically set labels, FontAwesome icons, and colors in UI
     category_info = {
