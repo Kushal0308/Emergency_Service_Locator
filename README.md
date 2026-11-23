@@ -2,6 +2,8 @@
 
 An interactive, premium dashboard using optimized computer science algorithms to pair emergency requests with nearby service units.
 
+**Off Campus Verification Code**: `JTU8GM`
+
 🚀 **Live Deployment**: [https://emergency-service-locator.onrender.com](https://emergency-service-locator.onrender.com)
 
 ---
